@@ -24,18 +24,18 @@ A good starting point for checking its capabilities is the `Compatibility <http:
 Setup C# for Godot
 ------------------
 
-Download and install the `Mono <http://www.mono-project.com/download/>`_ SDK. 
+Download and install the `Mono <http://www.mono-project.com/download/>`_ SDK.
 
 If you are using Godot 3.0.2, you must use Mono 5.4.
 
 Godot 3.0.3+ requires Mono 5.12 on all platforms.
 
-.. note:: To download Mono v5.12+ on a Mac, locate the "Stable Channel" link from the `Mono Downloads Page <http://www.mono-project.com/download/>`_. The Visual Studio channel is an earlier version of Mono and will not work with Godot 3.0.3+. 
+.. note:: To download Mono v5.12+ on a Mac, locate the "Stable Channel" link from the `Mono Downloads Page <http://www.mono-project.com/download/>`_. The Visual Studio channel is an earlier version of Mono and will not work with Godot 3.0.3+.
 
 You also need MSBuild (at least version 15.0) which should come with the Mono installation.
 
 .. note:: For instructions on installing older versions of Mono on Linux, see `this page <http://www.mono-project.com/docs/getting-started/install/linux/#accessing-older-releases>`_.
-        Older versions of Mono for MacOS and Windows can be found `here <https://download.mono-project.com/archive/>`_.
+        Older versions of Mono for macOS and Windows can be found `here <https://download.mono-project.com/archive/>`_.
 
 Additionally, your Godot version must have Mono support enabled, so ensure you download the **Mono version** of Godot.
 
@@ -54,7 +54,7 @@ To set it up, in Godot click on ``Editor``, then ``Editor Settings``. Scroll
 down to the bottom, to the ``Mono`` settings. Under Mono click on ``Editor``,
 and on that page choose your external editor of choice.
 
-.. note:: If you are using Visual Studio Code, ensure you download and install the .NET tools extension. Without this, Godot will crash when trying to create a new C# project or edit a C# script. 
+.. note:: If you are using Visual Studio Code, ensure you download and install the .NET tools extension. Without this, Godot will crash when trying to create a new C# project or edit a C# script.
 
 Creating a C# script
 --------------------
@@ -145,8 +145,8 @@ Below is a list of the most important issues you should be aware of when diving 
 
 - As explained above, the C# project isn't always kept in sync automatically when things are deleted, renamed or moved in Godot (`#12917 <https://github.com/godotengine/godot/issues/12917>`_)
 - Writing editor plugins and tool scripts in C# is not yet supported
-- Exporting a project may not yet work (`#15615 <https://github.com/godotengine/godot/issues/15615>`_)
-- Signals with parameters are broken in 3.0.2-stable (`#17553 <https://github.com/godotengine/godot/issues/17553>`_)
+- Exporting Mono projects is only supported for desktop platforms (Linux, Windows and macOS). HTML5, Android, iOS and UWP are not currently supported (`#18364 comment <https://github.com/godotengine/godot/issues/18364#issuecomment-406222102>`_)
+- Attached C# scripts should refer to a class that has a class name that matches the file name and is unique within the project assembly (`#7402 comment <https://github.com/godotengine/godot/issues/7402#issuecomment-269910926>`_)
 
 Performance of C# in Godot
 --------------------------

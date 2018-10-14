@@ -131,9 +131,16 @@ Drawing parameters
 Visibility Rect
 ~~~~~~~~~~~~~~~
 
-The ``W`` and ``H`` values control width and height of the visibility
-rectangle. The ``X`` and ``Y`` values control the position of the upper-left
-corner of the visibility rectangle relative to the particle emitter.
+
+The visibility rectangle controls the visibility of the particles on screen. If this rectangle is outside of the viewport, the engine will not render the particles on screen.
+
+The rectangle's ``W`` and ``H`` properties respectively control its Width and its Height.
+The ``X`` and ``Y`` properties control the position of the upper-left
+corner of the rectangle, relative to the particle emitter.
+
+You can generate a Visibility Rect can be generated automatically using the toolbar above the 2d view. To do so select the Particles2D node and Click ``Particles > Generate Visibility Rect``. Godot will simulate the Particles2D node emitting particles for a few seconds and set the rectangle to fit the surface the particles take.
+
+You can control the emit duration with the ``Generation Time (sec)`` option. The maximum value is 25 seconds. If you need more time for your particles to move around, you can temporarily change the ``preprocess`` duration on the Particles2D node.
 
 Local Coords
 ~~~~~~~~~~~~
@@ -159,24 +166,21 @@ means particles are drawn according to their emission order (default).
 ParticlesMaterial settings
 --------------------------
 
+.. Commented out as not implemented in 3.x for now.
 ..
-
-    Commented out as not implemented in 3.x for now.
-
-    Direction
-    ~~~~~~~~~
-
-    This is the base angle at which particles emit. Default is ``0`` (down):
-
-    .. image:: img/paranim1.gif
-
-    Changing it will change the emissor direction, but gravity will still
-    affect them:
-
-    .. image:: img/paranim2.gif
-
-    This parameter is useful because, by rotating the node, gravity will
-    also be rotated. Changing direction allows them to be separated.
+   Direction
+   ~~~~~~~~~
+..
+   This is the base angle at which particles emit. Default is ``0`` (down):
+..
+   .. image:: img/paranim1.gif
+..
+   Changing it will change the emissor direction, but gravity will still affect them:
+..
+   .. image:: img/paranim2.gif
+..
+   This parameter is useful because, by rotating the node, gravity will
+   also be rotated. Changing direction allows them to be separated.
 
 Spread
 ~~~~~~
